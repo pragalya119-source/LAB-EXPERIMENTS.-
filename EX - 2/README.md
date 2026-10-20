@@ -28,8 +28,7 @@ Search Bus → View Bus Details → Select Seats → Enter Passenger Details →
 
 ### Figma Link
 
-https://www.figma.com/make/G5FZpkVTIsBLzh9qznuClN/GoBus-Booking-Website?p=f&t=IE93H5h3x06rZ8nk-0
-
+https://handle-lean-01032030.figma.site/
 ### Result
 
 To design a Bus Ticket Booking System prototype using Figma with bus search, seat selection, and booking features.
