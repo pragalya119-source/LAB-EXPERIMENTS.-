@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoBus - Bus Ticket Booking</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<header>
+  <h1><span class="logo-icon">🚌</span><span>Go<span class="purple">Bus</span></span></h1>
+  <nav>
+    <a href="#buses">Book a bus</a>
+    <a href="#bookings">🎟 My Bookings</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HOME / BUS SEARCH -->
+  <section class="hero" id="home">
+    <div class="trust-badge">♧ Trusted by 20,000+ happy travellers</div>
+    <h2>Your Journey, <span>made simple.</span></h2>
+    <p>Compare buses, choose your perfect seat, and book in minutes.</p>
+
+    <form id="searchForm">
+      <div class="search-field">
+        <label for="from">From</label>
+        <input id="from" value="Chennai" required>
+      </div>
+      <div class="search-field">
+        <label for="to">To</label>
+        <input id="to" value="Bengaluru" required>
+      </div>
+      <div class="search-field">
+        <label for="date">Travel date</label>
+        <input id="date" type="date" value="2026-10-21" required>
+      </div>
+      <button type="submit">Search buses →</button>
+    </form>
+
+    <div class="benefits">
+      <span>✓ No booking fees</span>
+      <span>✓ Live seat selection</span>
+      <span>✓ Instant confirmation</span>
+    </div>
+  </section>
+
+  <!-- AVAILABLE BUSES -->
+  <section id="buses">
+    <h2>Available buses</h2>
+    <p>Choose a bus for your journey.</p>
+
+    <article class="bus-card">
+      <div class="bus-top">
+        <div>
+          <p class="bus-type">AC Sleeper</p>
+          <h3>Purple Line Express</h3>
+          <p>GB 2401</p>
+        </div>
+        <span class="seat-count">55 seats</span>
+      </div>
+
+      <div class="journey-times">
+        <div><strong>21:30</strong><p>Chennai</p></div>
+        <div class="journey-line"></div>
+        <div><strong>06:15</strong><p>Bengaluru</p></div>
+      </div>
+
+      <div class="bus-date">▢ <span id="busDate">Wed, 21 Oct, 2026</span></div>
+      <p>Boarding: Chennai Koyambedu</p>
+      <p>Dropping: Bengaluru Majestic</p>
+      <p>Fare: ₹850 per seat</p>
+      <button type="button" id="chooseBus">Select this bus</button>
+    </article>
+
+    <article class="bus-card">
+      <div class="bus-top">
+        <div>
+          <p class="bus-type">Non-AC Sitting</p>
+          <h3>Southern Travels</h3>
+          <p>GB 2402</p>
+        </div>
+        <span class="seat-count">55 seats</span>
+      </div>
+      <div class="journey-times">
+        <div><strong>21:00</strong><p>Chennai</p></div>
+        <div class="journey-line"></div>
+        <div><strong>05:45</strong><p>Bengaluru</p></div>
+      </div>
+      <p>Boarding: Guindy</p>
+      <p>Dropping: Bengaluru Majestic</p>
+      <p>Fare: ₹600 per seat</p>
+      <button type="button" id="chooseBus2">Select this bus</button>
+    </article>
+  </section>
+
+  <!-- BOOKING STEPS -->
+  <section id="seatSection">
+    <div class="steps">
+      <div class="step active" id="step1">
+        <span>1</span><p>Select seats</p>
+      </div>
+      <div class="step" id="step2">
+        <span>2</span><p>Passenger details</p>
+      </div>
+      <div class="step" id="step3">
+        <span>3</span><p>Confirmation</p>
+      </div>
+    </div>
+
+    <!-- STEP 1: SEAT SELECTION -->
+    <div id="seatStage">
+      <p class="eyebrow">Choose up to 6 seats</p>
+      <h2>Select your seats</h2>
+
+      <div class="seat-legend">
+        <span><i class="legend-available"></i> Available</span>
+        <span><i class="legend-selected"></i> Selected</span>
+        <span><i class="legend-booked"></i> Booked</span>
+        <span class="sleeper-note">Sleeper seats are longer</span>
+      </div>
+
+      <div class="decks">
+        <article class="deck-card">
+          <div class="deck-heading">
+            <h3>Lower Deck</h3>
+            <span>28 seats</span>
+          </div>
+          <div class="bus-interior">
+            <div class="driver-icon">◎</div>
+            <div class="seat-grid" id="lowerDeck"></div>
+          </div>
+        </article>
+
+        <article class="deck-card">
+          <div class="deck-heading">
+            <h3>Upper Deck</h3>
+            <span>27 seats</span>
+          </div>
+          <div class="bus-interior">
+            <div class="driver-icon">◎</div>
+            <div class="seat-grid" id="upperDeck"></div>
+          </div>
+        </article>
+      </div>
+
+      <article class="bus-card">
+        <p class="bus-type" id="selectedBusType">AC Sleeper</p>
+        <h3 id="selectedBusName">Purple Line Express</h3>
+        <p id="selectedBusNumber">GB 2401</p>
+        <div class="journey-times">
+          <div><strong id="departureTime">21:30</strong><p id="departureCity">Chennai</p></div>
+          <div class="journey-line"></div>
+          <div><strong id="arrivalTime">06:15</strong><p id="arrivalCity">Bengaluru</p></div>
+        </div>
+        <p id="journeyDate">Wed, 21 Oct, 2026</p>
+      </article>
+
+      <article class="fare-card">
+        <div class="fare-heading">
+          <h3>Fare summary</h3>
+          <span id="selectedCount">0 selected</span>
+        </div>
+        <p id="selectedSeatText">Select a seat to continue</p>
+        <div class="fare-total">
+          <span>Total amount</span>
+          <strong id="totalFare">₹0</strong>
+        </div>
+        <button type="button" id="continueButton" disabled>Continue →</button>
+      </article>
+    </div>
+
+    <!-- STEP 2: PASSENGER DETAILS -->
+    <div id="passengerStage" hidden>
+      <p class="eyebrow">Almost there</p>
+      <h2>Passenger details</h2>
+
+      <div class="fare-card">
+        <p id="passengerSeatSummary">Selected seats: None</p>
+        <p id="passengerFareSummary">Total fare: ₹0</p>
+      </div>
+
+      <form id="passengerForm">
+        <label for="passengerName">Full name</label>
+        <input id="passengerName" type="text" placeholder="Enter your full name" required>
+
+        <label for="phone">Phone number</label>
+        <input id="phone" type="tel" placeholder="10-digit phone number"
+          pattern="[0-9]{10}" maxlength="10" required>
+
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="Enter your email" required>
+
+        <label for="boardingPoint">Boarding point</label>
+        <select id="boardingPoint" required>
+          <option value="Chennai Koyambedu">Chennai Koyambedu</option>
+          <option value="Guindy">Guindy</option>
+        </select>
+
+        <label for="droppingPoint">Dropping point</label>
+        <select id="droppingPoint" required>
+          <option value="Bengaluru Majestic">Bengaluru Majestic</option>
+          <option value="Bengaluru Silk Board">Bengaluru Silk Board</option>
+        </select>
+
+        <button type="submit">Confirm booking →</button>
+        <button type="button" class="secondary-button" id="backToSeats">← Back to seats</button>
+      </form>
+    </div>
+
+    <!-- STEP 3: CONFIRMATION -->
+    <div id="confirmationStage" hidden>
+      <div class="confirmation-card">
+        <div class="success-icon">✓</div>
+        <h2>Booking confirmed!</h2>
+        <p>Your GoBus booking details are shown below.</p>
+        <div id="bookingResult"></div>
+        <button type="button" id="newBooking">Book another journey</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY BOOKINGS -->
+  <section id="bookings">
+    <h2>My Bookings</h2>
+    <div id="myBookings" class="fare-card">
+      <p>No bookings yet. Complete a booking to see it here.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 GoBus | Your journey, made simple.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
