@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Mobile Shopping App</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<header>
+    <h1>🛍️ ShopEase</h1>
+    <input type="text" placeholder="Search for products...">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#deals">Today's Deals</a>
+        <a href="#cart">My Cart</a>
+        <a href="#wishlist">Wishlist</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h2>Welcome to ShopEase!</h2>
+    <p>Discover amazing products at great prices.</p>
+    <button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
+</section>
+
+<section id="categories">
+    <h2>Shop by Category</h2>
+    <div class="categories">
+        <span>Electronics</span>
+        <span>Fashion</span>
+        <span>Beauty</span>
+        <span>Home</span>
+        <span>Accessories</span>
+    </div>
+</section>
+
+<section id="products">
+    <h2>Popular Products</h2>
+    <div class="products">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones">
+            <h3>Wireless Headphones</h3>
+            <p>₹1,499</p>
+            <button onclick="addToCart('Wireless Headphones')">Add to Cart</button>
+            <button onclick="addToWishlist('Wireless Headphones')">♡ Wishlist</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Watch">
+            <h3>Smart Watch</h3>
+            <p>₹2,299</p>
+            <button onclick="addToCart('Smart Watch')">Add to Cart</button>
+            <button onclick="addToWishlist('Smart Watch')">♡ Wishlist</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Shoes">
+            <h3>Running Shoes</h3>
+            <p>₹1,899</p>
+            <button onclick="addToCart('Running Shoes')">Add to Cart</button>
+            <button onclick="addToWishlist('Running Shoes')">♡ Wishlist</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400" alt="Camera">
+            <h3>Digital Camera</h3>
+            <p>₹5,999</p>
+            <button onclick="addToCart('Digital Camera')">Add to Cart</button>
+            <button onclick="addToWishlist('Digital Camera')">♡ Wishlist</button>
+        </div>
+    </div>
+</section>
+
+<section id="deals">
+    <h2>Today's Special Deals</h2>
+    <p>Enjoy exciting discounts on selected products!</p>
+</section>
+
+<section id="cart">
+    <h2>My Cart</h2>
+    <ul id="cartItems"></ul>
+</section>
+
+<section id="wishlist">
+    <h2>My Wishlist</h2>
+    <ul id="wishItems"></ul>
+</section>
+
+<footer>
+    <p>© 2026 ShopEase. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
