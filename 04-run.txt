@@ -1,0 +1,4 @@
+$ python3 string_length.py   # input: simats
+Enter the string: Length of the string = 6
+$ python3 string_length.py   # input: hello world
+Enter the string: Length of the string = 11
