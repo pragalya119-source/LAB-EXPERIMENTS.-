@@ -1,0 +1,18 @@
+$ python swap_smallest.py
+Enter the string: ccad
+Enter first character: c
+Enter second character: a
+Modified string = aacd
+Smallest possible string (at most one swap) = aacd
+$ pytest -v
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+rootdir: .
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 3 items
+
+test_swap_smallest.py::test_manual_example PASSED                        [ 33%]
+test_swap_smallest.py::test_smallest_string PASSED                       [ 66%]
+test_swap_smallest.py::test_swap_is_symmetric PASSED                     [100%]
+
+============================== 3 passed in 0.01s ===============================

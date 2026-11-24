@@ -1,0 +1,14 @@
+flowchart TD
+ S([Start]) --> I[/"Input str, ch1, ch2"/]
+ I --> A["i <- 1<br/>n <- Length_Of(str)"]
+ A --> L{"i <= n ?"}
+ L -- Yes --> C1{"str[i] = ch1 ?"}
+ C1 -- Yes --> R1["str[i] <- ch2"]
+ C1 -- No --> C2{"str[i] = ch2 ?"}
+ C2 -- Yes --> R2["str[i] <- ch1"]
+ C2 -- No --> N["i <- i + 1"]
+ R1 --> N
+ R2 --> N
+ N --> L
+ L -- No --> O[/"Output modified string"/]
+ O --> E([End])
