@@ -1,0 +1,15 @@
+$ python string_length.py
+Enter a String: SoftwareEngineering
+Total Number of Characters = 19
+$ pytest -v
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+rootdir: .
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 3 items
+
+test_string_length.py::test_expected_output_from_lab_manual PASSED       [ 33%]
+test_string_length.py::test_empty_string PASSED                          [ 66%]
+test_string_length.py::test_matches_builtin_len PASSED                   [100%]
+
+============================== 3 passed in 0.01s ===============================
