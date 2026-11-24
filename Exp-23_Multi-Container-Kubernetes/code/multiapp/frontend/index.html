@@ -1,0 +1,5 @@
+<h2>Student List</h2><ul id="list"></ul>
+<script>
+fetch('/api/students').then(r => r.json()).then(d =>
+  d.forEach(s => list.innerHTML += `<li>${s.id} - ${s.name} (${s.dept})</li>`));
+</script>

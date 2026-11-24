@@ -1,0 +1,11 @@
+$ python validate_manifests.py
+mysql.yaml     Secret                 mysql-secret       
+mysql.yaml     ConfigMap              mysql-init         
+mysql.yaml     PersistentVolumeClaim  mysql-pvc          
+mysql.yaml     Deployment             mysql              replicas=1
+mysql.yaml     Service                mysql-service      type=ClusterIP
+backend.yaml   Deployment             backend            replicas=2
+backend.yaml   Service                backend-service    type=ClusterIP
+frontend.yaml  Deployment             frontend           replicas=2
+frontend.yaml  Service                frontend-service   type=NodePort
+All manifests parsed successfully

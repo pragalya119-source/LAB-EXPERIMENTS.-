@@ -1,0 +1,7 @@
+flowchart TB
+ U[Browser] --> FS["frontend-service<br/>NodePort 30080"]
+ subgraph NS["namespace: multiapp"]
+ FS --> FE["frontend Deployment<br/>Nginx x2 (scale to 4)"]
+ FE -- "/api/ proxy" --> BS[backend-service<br/>ClusterIP 5000] --> BE["backend Deployment<br/>Flask x2"]
+ BE --> MS[mysql-service<br/>ClusterIP 3306] --> DB["mysql Deployment x1<br/>PVC 1Gi + init ConfigMap"]
+ end
