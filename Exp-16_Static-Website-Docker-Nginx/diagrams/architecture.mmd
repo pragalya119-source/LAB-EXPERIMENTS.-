@@ -1,0 +1,7 @@
+flowchart TB
+ subgraph Dev["Developer machine"]
+ H[index.html + style.css] --> DF[Dockerfile<br/>FROM nginx:alpine]
+ DF -- docker build --> IMG[(Image static-site:1.0)]
+ end
+ IMG -- "docker run -p 8080:80" --> C["Container mysite<br/>Nginx on port 80"]
+ B[Browser<br/>localhost:8080] --> C
