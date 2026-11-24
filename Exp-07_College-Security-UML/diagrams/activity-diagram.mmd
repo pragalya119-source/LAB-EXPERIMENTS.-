@@ -1,0 +1,6 @@
+flowchart TD
+ S((" ")) --> A[Login] --> B[View assigned shift] --> C[Mark attendance] --> D[Patrol / monitor location]
+ D --> Q{Incident?}
+ Q -- Yes --> R[Report incident] --> N[Notify supervisor] --> F[End shift]
+ Q -- No --> F
+ F --> E(((" ")))

@@ -1,0 +1,55 @@
+classDiagram
+ class Administrator{
+  +int adminId
+  +String name
+  +addGuard()
+  +assignShift()
+  +generateReport()
+ }
+ class SecurityGuard{
+  +int guardId
+  +String name
+  +String phone
+  +markAttendance()
+  +reportIncident()
+ }
+ class Shift{
+  +int shiftId
+  +Time startTime
+  +Time endTime
+ }
+ class DutyAssignment{
+  +Date date
+  +assign()
+  +cancel()
+ }
+ class Location{
+  +int locationId
+  +String name
+  +String building
+ }
+ class Attendance{
+  +Date date
+  +String status
+  +mark()
+ }
+ class Visitor{
+  +int visitorId
+  +String name
+  +String purpose
+  +checkIn()
+  +checkOut()
+ }
+ class IncidentReport{
+  +int reportId
+  +String description
+  +DateTime time
+  +submit()
+ }
+ Administrator "1" --> "*" DutyAssignment : creates
+ SecurityGuard "1" --> "*" DutyAssignment : is assigned
+ DutyAssignment "*" --> "1" Shift
+ DutyAssignment "*" --> "1" Location
+ SecurityGuard "1" --> "*" Attendance : has
+ SecurityGuard "1" --> "*" IncidentReport : files
+ SecurityGuard "1" --> "*" Visitor : registers

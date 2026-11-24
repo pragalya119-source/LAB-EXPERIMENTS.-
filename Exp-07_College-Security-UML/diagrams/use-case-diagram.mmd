@@ -1,0 +1,7 @@
+flowchart LR
+ A(["Administrator"]); S(["Security Supervisor"]); G(["Security Guard"]); V(["Visitor"])
+ subgraph SYS["Security Management System"]
+ U1(Add Guard); U2(Assign Shift); U3(Generate Report); U4(Approve Leave)
+ U5(Mark Attendance); U6(Report Incident); U7(View Duty Schedule); U8(Register Visitor)
+ end
+ A --- U1 & U2 & U3; S --- U4 & U6; G --- U5 & U6 & U7; V --- U8
