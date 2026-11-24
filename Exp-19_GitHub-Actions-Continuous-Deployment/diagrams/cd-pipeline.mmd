@@ -1,0 +1,6 @@
+flowchart TB
+ P[git push main] --> A[Checkout] --> B[Docker Hub login] --> C[Build and push image<br/>latest + commit SHA] --> D{Cloud target}
+ D --> E[AWS ECS<br/>force new deployment]
+ D --> F[Render deploy hook]
+ E --> L([Public URL shows new version])
+ F --> L
