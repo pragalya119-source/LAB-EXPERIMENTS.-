@@ -1,0 +1,24 @@
+$ # app.py changed: return jsonify(result=a - b)
+$ pytest -v
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+rootdir: .
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 2 items
+
+test_app.py::test_home PASSED                                            [ 50%]
+test_app.py::test_add FAILED                                             [100%]
+
+=================================== FAILURES ===================================
+___________________________________ test_add ___________________________________
+
+    def test_add():
+        r = client.get("/add/2/3")
+>       assert r.get_json()["result"] == 5
+E       assert -1 == 5
+
+test_app.py:12: AssertionError
+=========================== short test summary info ============================
+FAILED test_app.py::test_add - assert -1 == 5
+========================= 1 failed, 1 passed in 0.09s ==========================
+# -> test job fails, build-and-push and deploy are skipped

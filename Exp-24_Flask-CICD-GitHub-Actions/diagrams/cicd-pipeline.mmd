@@ -1,0 +1,4 @@
+flowchart TB
+ P[push / pull request] --> T["test job<br/>pytest"]
+ T -- pass --> B["build-and-push<br/>Docker Hub"] --> D["deploy<br/>Heroku container release"]
+ T -- fail --> X([build and deploy skipped])
