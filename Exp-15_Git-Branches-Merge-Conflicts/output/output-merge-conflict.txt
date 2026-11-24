@@ -1,0 +1,33 @@
+$ bash merge_conflict_demo.sh
+== Step 2: create feature branch ==
+Switched to a new branch 'feature-update'
+ M README.md
+* feature-update
+  main
+== teammate changes the same line on main ==
+== Steps 6-9: pull main, back to feature, merge ==
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+UU README.md
+== Step 10: conflict markers in README.md ==
+# Shared Project
+<<<<<<< HEAD
+Status: updated by feature branch
+=======
+Status: reviewed by teammate
+>>>>>>> main
+== resolve: keep both changes ==
+# Shared Project
+Status: reviewed by teammate and updated by feature branch
+On branch feature-update
+Your branch is ahead of 'origin/feature-update' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+*   4d4a6bf Resolved merge conflict
+|\  
+| * 0bc5dd9 Teammate edits status
+* | 7db4140 Updated README
+|/  
+* 351922e Initial commit
