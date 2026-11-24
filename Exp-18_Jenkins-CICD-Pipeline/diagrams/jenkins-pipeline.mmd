@@ -1,0 +1,3 @@
+flowchart TB
+ G[Git push to GitHub] -- "pollSCM every 2 min" --> J1[Checkout] --> J2[Build Image] --> J3[Test<br/>pytest] --> J4[Deploy<br/>docker run -p 5000:5000] --> OK([App live on :5000])
+ J3 -- fails --> X([Pipeline failed])
