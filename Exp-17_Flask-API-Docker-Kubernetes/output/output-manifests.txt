@@ -1,0 +1,3 @@
+$ python -c "import yaml;[print(d['kind'],d['metadata']['name']) for f in ('deployment.yaml','service.yaml') for d in yaml.safe_load_all(open(f))]"
+Deployment flask-api-deployment
+Service flask-api-service

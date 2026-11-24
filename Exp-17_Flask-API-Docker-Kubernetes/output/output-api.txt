@@ -1,0 +1,10 @@
+$ curl http://localhost:5000/
+{"message":"Hello from Flask API on Kubernetes"}
+$ curl http://localhost:5000/api/students
+[{"dept":"CSE","id":1,"name":"Arun"},{"dept":"IT","id":2,"name":"Divya"}]
+$ curl -X POST -H 'Content-Type: application/json' -d '{"name":"Kavin","dept":"ECE"}' http://localhost:5000/api/students
+{"dept":"ECE","id":3,"name":"Kavin"}
+$ curl http://localhost:5000/api/students
+[{"dept":"CSE","id":1,"name":"Arun"},{"dept":"IT","id":2,"name":"Divya"},{"dept":"ECE","id":3,"name":"Kavin"}]
+$ curl http://localhost:5000/health
+{"status":"UP"}

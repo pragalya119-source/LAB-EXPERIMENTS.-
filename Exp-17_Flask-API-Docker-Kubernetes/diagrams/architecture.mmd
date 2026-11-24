@@ -1,0 +1,7 @@
+flowchart TB
+ A[app.py + Dockerfile] -- docker build --> I[(Image)] -- docker push --> H[(Docker Hub)]
+ H -- image pull --> K
+ subgraph K["Kubernetes cluster"]
+ S["Service NodePort 30007"] --> P1[Pod 1 flask-api] & P2[Pod 2 flask-api]
+ end
+ U[Browser / curl] --> S
