@@ -1,0 +1,5 @@
+flowchart TD
+ S((" ")) --> A[Browse restaurants] --> B[Select food items] --> C[Place order] --> D[Make payment]
+ D --> P{Payment successful?}
+ P -- No --> D2[Show failure / retry] --> D
+ P -- Yes --> R[Restaurant accepts and prepares order] --> G[Delivery agent accepts delivery] --> T[Customer tracks order] --> X[Order delivered] --> E(((" ")))

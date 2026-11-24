@@ -1,0 +1,64 @@
+classDiagram
+ class Customer{
+  +int customerId
+  +String name
+  +String address
+  +String phone
+  +browseRestaurants()
+  +placeOrder()
+  +trackOrder()
+ }
+ class Restaurant{
+  +int restaurantId
+  +String name
+  +String location
+  +updateOrderStatus()
+  +manageMenu()
+ }
+ class Menu{
+  +int menuId
+  +addItem()
+  +removeItem()
+ }
+ class FoodItem{
+  +int itemId
+  +String name
+  +double price
+  +boolean available
+ }
+ class Order{
+  +int orderId
+  +Date orderDate
+  +String status
+  +double total
+  +calculateTotal()
+  +updateStatus()
+ }
+ class Payment{
+  +int paymentId
+  +String method
+  +double amount
+  +String status
+  +makePayment()
+ }
+ class DeliveryAgent{
+  +int agentId
+  +String name
+  +String vehicle
+  +acceptDelivery()
+  +updateProgress()
+ }
+ class Delivery{
+  +int deliveryId
+  +String status
+  +Date eta
+  +updateStatus()
+ }
+ Customer "1" --> "0..*" Order : places
+ Restaurant "1" *-- "1" Menu : has
+ Menu "1" o-- "1..*" FoodItem : contains
+ Order "1" o-- "1..*" FoodItem : includes
+ Order "1" --> "1" Payment : paid by
+ Order "1" --> "1" Delivery : fulfilled by
+ Restaurant "1" --> "0..*" Order : receives
+ DeliveryAgent "1" --> "0..*" Delivery : handles

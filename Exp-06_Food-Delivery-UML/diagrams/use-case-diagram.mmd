@@ -1,0 +1,11 @@
+flowchart LR
+ C(["Customer"]); R(["Restaurant"]); A(["Delivery Agent"]); M(["Administrator"])
+ subgraph SYS["Online Food Delivery System"]
+ U1(Browse Restaurants); U2(View Menu); U3(Place Order); U4(Make Payment); U5(Track Order)
+ U6(Manage Menu); U7(Update Order Status); U8(Accept Delivery); U9(Update Delivery Progress); U10(Manage Users)
+ end
+ C --- U1 & U2 & U3 & U4 & U5
+ R --- U6 & U7
+ A --- U8 & U9
+ M --- U10
+ U3 -. include .-> U4
