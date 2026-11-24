@@ -1,0 +1,4 @@
+flowchart TB
+ U[(Original repo<br/>3-Simple-Python-Projects)] -- Fork --> F[(Your fork)] -- git clone --> L[Local clone]
+ L -- "git checkout -b feature-update" --> B[feature-update] -- "edit ytDownloader.py<br/>commit + push" --> F
+ F -- Pull request --> U
