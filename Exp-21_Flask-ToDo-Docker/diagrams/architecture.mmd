@@ -1,0 +1,7 @@
+flowchart TB
+ B[Browser :5000] -->|"GET / , POST /add"| F
+ subgraph C["Docker container todo (python:3.11-slim)"]
+ F[Flask app.py] --> T[templates/index.html]
+ F --> M[(In-memory tasks list)]
+ end
+ F -->|"/api/tasks JSON"| B
