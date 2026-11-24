@@ -1,0 +1,13 @@
+sequenceDiagram
+ participant U as Upstream repo (first-contributions)
+ participant F as Your fork (GitHub)
+ participant L as Local clone
+ U->>F: Fork
+ F->>L: git clone
+ L->>L: git checkout -b feature
+ L->>L: edit + git commit
+ L->>F: git push origin feature
+ F->>U: Open pull request
+ U-->>F: Review feedback
+ F->>U: Push updates to same branch
+ U->>U: Maintainer merges
