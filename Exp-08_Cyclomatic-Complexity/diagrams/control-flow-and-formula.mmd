@@ -1,0 +1,6 @@
+flowchart LR
+ IN["Given<br/>E = 17 edges<br/>N = 13 nodes<br/>P = 5 predicate nodes"] --> F1["V(G) = E - N + 2<br/>= 17 - 13 + 2 = 6"]
+ IN --> F2["V(G) = P + 1<br/>= 5 + 1 = 6"]
+ F1 --> C{Equal?}
+ F2 --> C
+ C -- Yes --> R["6 independent paths<br/>at least 6 test cases"]
