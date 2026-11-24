@@ -1,0 +1,15 @@
+gitGraph
+ commit id:"Initial README"
+ branch feature-login
+ branch feature-catalog
+ branch feature-cart
+ checkout feature-login
+ commit id:"Add login module"
+ checkout feature-catalog
+ commit id:"Add catalog module"
+ checkout feature-cart
+ commit id:"Add cart module"
+ checkout main
+ merge feature-login id:"PR #1"
+ merge feature-catalog id:"PR #2 (conflict resolved)"
+ merge feature-cart id:"PR #3 (conflict resolved)"

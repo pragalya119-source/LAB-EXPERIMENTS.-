@@ -1,0 +1,55 @@
+$ bash team_workflow_demo.sh
+== Step 4: branches on the remote ==
+  origin/feature-cart
+  origin/feature-catalog
+  origin/feature-login
+  origin/main
+
+== Step 6: merge PR #1 (feature-login) ==
+ README.md | 2 +-
+ login.py  | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 login.py
+
+== Step 7: merge PR #2 (feature-catalog) -> conflict ==
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+# Team Project
+<<<<<<< HEAD
+Modules: Login
+=======
+Modules: Login, Catalog
+>>>>>>> origin/feature-catalog
+resolved -> Modules: Login, Catalog
+
+== Step 7: PR #3 (feature-cart) - update branch from main, resolve conflict ==
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+== Step 9: final state ==
+README.md
+cart.py
+catalog.py
+login.py
+# Team Project
+Modules: Login, Catalog, Cart
+
+*   bb5a550 (HEAD -> main, origin/main) Merge pull request #3 from feature-cart
+|\  
+| *   5226b2a (origin/feature-cart) Resolve README merge conflict
+| |\  
+| |/  
+|/|   
+* |   679a5eb Resolve README merge conflict
+|\ \  
+| * | e64492c (origin/feature-catalog) Add feature-catalog module
+* | |   fba5522 Merge pull request #1 from feature-login
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 34535eb (origin/feature-login) Add feature-login module
+|/ /  
+| * bdd1807 Add feature-cart module
+|/  
+* e28049a Initial README
