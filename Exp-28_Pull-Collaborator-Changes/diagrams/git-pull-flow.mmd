@@ -1,0 +1,9 @@
+sequenceDiagram
+ participant C as Collaborator
+ participant G as GitHub (origin/main)
+ participant Y as Your local repo
+ C->>G: git push (Updated README by collaborator)
+ Y->>Y: git status (behind origin/main)
+ Y->>G: git pull origin main
+ G-->>Y: Fast-forward (1 file changed)
+ Y->>Y: git status (up to date)

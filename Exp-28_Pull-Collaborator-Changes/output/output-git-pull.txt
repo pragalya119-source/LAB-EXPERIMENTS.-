@@ -1,0 +1,21 @@
+$ bash pull_demo.sh
+== Step 3: collaborator edits README.md and pushes ==
+== Step 4: my local copy is behind ==
+## main...origin/main
+## main...origin/main [behind 1]
+== Step 5: git pull origin main ==
+From ~/remote
+ * branch            main       -> FETCH_HEAD
+Updating da1dbec..f2cefef
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+== Step 6: verify ==
+# My Project
+Added by collaborator
+f2cefef Updated README by collaborator
+da1dbec Initial commit
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
