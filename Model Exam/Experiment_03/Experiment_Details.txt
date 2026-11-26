@@ -1,0 +1,32 @@
+EXPERIMENT NO. 3
+TITLE: GitHub Repository Setup with .gitignore and README
+
+AIM
+To create a GitHub repository for a personal portfolio website, initialize it with README.md, clone it locally, add a .gitignore file, update the README with a project description, and push the changes to GitHub.
+
+SOFTWARE REQUIREMENTS
+Git, GitHub account and browser, terminal / Git Bash, text editor or VS Code.
+
+PROCEDURE
+1. Sign in to GitHub and create a repository for the portfolio website.
+2. Initialize it with README.md.
+3. Copy its HTTPS URL and clone it locally using git clone REPOSITORY_URL.
+4. Enter the cloned directory.
+5. Create .gitignore rules for dependencies, secrets, logs, editor files and build output.
+6. Update README.md with project purpose and planned sections.
+7. Stage changes using git add.
+8. Commit README and .gitignore/project changes with descriptive messages.
+9. Push changes to GitHub.
+10. Verify using git log --oneline and git status --short.
+
+SOURCE FILES
+Source_Code/README.md, .gitignore and index.html.
+
+EXPECTED OUTPUT
+A GitHub repository with README documentation, suitable ignore rules and commits visible in its history; changes pushed to the remote.
+
+ANALYSIS
+.gitignore specifies untracked files and directories Git should ignore. It prevents dependencies, local secrets, logs, editor metadata and build output from being added accidentally. It does not remove files already tracked. Separate commits make documentation and ignore-rule changes independently reviewable. git log --oneline shows concise history.
+
+RESULT
+A local Git repository with README and .gitignore documentation was initialized, committed and verified. The commands can connect it to the student's GitHub repository and push commits.
