@@ -1,0 +1,36 @@
+EXPERIMENT NO. 2
+TITLE: Containerize a Node.js Express Notes Application
+
+AIM
+To create a Node.js Express Notes application, containerize it using Docker, build and run the container locally, test its functionality inside the container, and document the Docker Hub push procedure.
+
+SOFTWARE REQUIREMENTS
+Node.js 20+ and npm; Express 4.x; Docker Desktop / Docker Engine; Docker Hub account; curl or a browser.
+
+PROCEDURE
+1. Create an Express app with GET /notes, POST /notes and DELETE /notes/:id endpoints.
+2. Add JSON middleware and validate that note text is non-empty.
+3. Run npm install to install dependencies from package.json.
+4. Create the Dockerfile with a Node base image, /app working directory, dependency installation, source copy, port 3000 and server startup.
+5. Build: docker build -t notes-express:1.0 .
+6. Run: docker run --name notes-app -p 3000:3000 notes-express:1.0
+7. Test GET /health, GET /notes, POST /notes and DELETE /notes/:id with curl.
+8. Tag and push the image to Docker Hub using your own username.
+9. Remove the container and observe that in-memory notes are lost.
+
+SOURCE CODE
+Source_Code/server.js, notes.js, package.json, Dockerfile, .dockerignore and notes.test.js.
+
+EXPECTED OUTPUT
+Server: Notes API listening on port 3000. GET /health returns {"status":"ok"}. POST /notes returns HTTP 201 and a note object. GET /notes lists notes. DELETE /notes/1 returns {"message":"Note deleted."}.
+
+ANALYSIS
+FROM selects the Node runtime; WORKDIR sets the app directory; COPY package*.json copies manifests; RUN npm install installs dependencies; COPY . . copies source; ENV sets runtime values; EXPOSE documents port 3000; USER node avoids root; CMD starts the API. .dockerignore excludes node_modules, Git metadata, environment files and logs. Notes are held in process memory, not a persistent volume. Removing the container removes the process and its writable layer, so notes are not retained. Durable storage requires a database or volume.
+
+DOCKER HUB
+docker login
+docker build -t YOUR_DOCKERHUB_USERNAME/notes-express:1.0 .
+docker push YOUR_DOCKERHUB_USERNAME/notes-express:1.0
+
+RESULT
+The Express Notes API source, Docker configuration and automated service tests were prepared. Build, run and Docker Hub publication must be performed on a machine with Docker, npm registry access and the student's own account.

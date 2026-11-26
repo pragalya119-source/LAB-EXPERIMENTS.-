@@ -1,0 +1,6 @@
+{
+  "name":"notes-express-docker-lab","version":"1.0.0","private":true,
+  "description":"Simple in-memory Notes REST API using Express","main":"server.js",
+  "scripts":{"start":"node server.js","test":"node --test"},
+  "dependencies":{"express":"^4.21.2"}
+}

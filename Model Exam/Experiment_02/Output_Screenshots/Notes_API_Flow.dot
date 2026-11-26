@@ -1,0 +1,9 @@
+digraph G {
+ graph [rankdir=LR,bgcolor="white",pad="0.25",nodesep="0.45",ranksep="0.55",labelloc="t",label="Express Notes API – endpoint flow",fontsize=22,fontname="Arial"];
+ node [fontname="Arial",fontsize=12,style="rounded,filled",shape=box,color="#334155",fillcolor="#e8f1fb",margin="0.18,0.12"];
+ edge [fontname="Arial",fontsize=10,color="#334155"];
+ client [label="Client / curl",fillcolor="#d1fae5"]; api [label="Express server\\nJSON middleware"];
+ get [label="GET /notes\\nList notes"]; post [label="POST /notes\\nValidate + add"]; delete [label="DELETE /notes/:id\\nRemove note"];
+ memory [label="In-memory notes array",fillcolor="#fef3c7"];
+ client->api; api->get; api->post; api->delete; get->memory; post->memory; delete->memory;
+}
