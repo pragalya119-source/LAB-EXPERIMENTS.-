@@ -1,0 +1,36 @@
+EXPERIMENT NO. 1
+TITLE: RAPTOR Flowchart – Reverse a Number
+
+AIM
+Using RAPTOR, draw a flowchart to reverse the digits of a given positive integer. For example, 1234 produces 4321. Use the result to check whether the number is a palindrome.
+
+SOFTWARE REQUIREMENTS
+- RAPTOR (for the required flowchart)
+- Python 3.10+ (included executable reference implementation)
+- Windows, Linux or macOS
+
+PROCEDURE
+1. Start and read a positive integer n.
+2. Initialize reverse = 0.
+3. Repeat while n > 0:
+   a. digit = n MOD 10
+   b. reverse = reverse * 10 + digit
+   c. n = integer division of n by 10
+4. Display reverse.
+5. Compare reverse with the original number to determine whether it is a palindrome.
+6. Execute the flowchart with at least two inputs and record the outputs.
+7. Trace every loop iteration for the analysis section.
+
+SOURCE CODE
+Source_Code/reverse_number.py
+
+EXPECTED OUTPUT
+Input 1234 -> Reversed number 4321; Palindrome No.
+Input 1221 -> Reversed number 1221; Palindrome Yes.
+Input 1200 -> Integer result 21; leading zeroes are not represented in an integer.
+
+ANALYSIS
+For d decimal digits, the loop executes d times. Time complexity is O(d); auxiliary space is O(1) for the algorithm (the included optional trace list uses O(d) for demonstration). Trailing zeroes of the original number become leading zeroes in the reversed digit sequence and are dropped by integer representation.
+
+RESULT
+The digit-reversal algorithm was implemented and tested. The reverse and palindrome result were verified for the sample inputs.

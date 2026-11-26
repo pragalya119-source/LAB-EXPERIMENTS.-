@@ -1,0 +1,17 @@
+
+digraph G {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.35", ranksep="0.42", labelloc="t", label="RAPTOR logic: Reverse a Number", fontsize=22, fontname="Arial"];
+ node [fontname="Arial", fontsize=12, style="filled", color="#334155", fillcolor="#e8f1fb", shape=box, margin="0.18,0.12"];
+ edge [fontname="Arial", fontsize=10, color="#334155"];
+ start [shape=oval, label="START", fillcolor="#d1fae5"];
+ input [shape=parallelogram, label="Input n\\noriginal = n; reverse = 0"];
+ cond [shape=diamond, label="n > 0?"];
+ digit [label="digit = n MOD 10\\nreverse = reverse * 10 + digit\\nn = n DIV 10"];
+ out [shape=parallelogram, label="Display reverse\\nPalindrome = (original == reverse)"];
+ end [shape=oval, label="STOP", fillcolor="#fee2e2"];
+ start->input->cond;
+ cond->digit [label="Yes"];
+ digit->cond;
+ cond->out [label="No"];
+ out->end;
+}
