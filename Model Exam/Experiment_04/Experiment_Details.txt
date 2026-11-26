@@ -1,0 +1,32 @@
+EXPERIMENT NO. 4
+TITLE: Smart Parking Management System – Use Case Diagram
+
+AIM
+To design a UML Use Case Diagram for a Smart Parking Management System of a shopping mall using a CASE tool.
+
+PROBLEM CONTEXT
+Drivers search for free parking slots, reserve a slot in advance and pay the parking fee online. At entry and exit gates, a camera reads the vehicle number plate to open the barrier. The parking attendant handles exceptions such as a lost ticket, and the administrator configures the tariff and views occupancy reports.
+
+SOFTWARE REQUIREMENTS
+Umbrello UML Modeller, StarUML or another UML CASE tool; PlantUML (optional); Windows / Linux / macOS.
+
+PROCEDURE
+1. Identify the system boundary and name it Smart Parking Management System.
+2. Identify actors: Driver, Parking Attendant, Administrator and external Payment Gateway.
+3. Add driver use cases: Search Available Slots, Reserve Slot in Advance, Pay Parking Fee Online and Enter Parking.
+4. Add entry-flow use cases Read Vehicle Number Plate and Open Barrier.
+5. Connect Enter Parking to Read Vehicle Number Plate and Open Barrier using <<include>> relationships.
+6. Add Parking Attendant use case Handle Lost Ticket.
+7. Add Administrator use cases Configure Tariff and View Occupancy Reports.
+8. Associate Payment Gateway with Pay Parking Fee Online.
+9. Place actors outside and use cases inside the system boundary.
+10. Validate labels, actor associations and include relationships, then export the diagram.
+
+SOURCE
+Source_Code/Smart_Parking_Use_Case.puml
+
+EXPECTED OUTPUT
+A UML Use Case Diagram with four actors, the Smart Parking Management System boundary, driver parking actions, entry camera/barrier included behaviours, lost-ticket handling, tariff configuration and occupancy reporting.
+
+RESULT
+The Smart Parking Management System use case model was prepared with actors, use cases, associations and include relationships.

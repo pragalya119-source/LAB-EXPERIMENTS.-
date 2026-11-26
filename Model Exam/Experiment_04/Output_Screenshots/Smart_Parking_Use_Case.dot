@@ -1,0 +1,16 @@
+digraph UML {
+ graph [rankdir=LR,bgcolor="white",pad="0.3",nodesep="0.55",ranksep="0.8",labelloc="t",label="Smart Parking Management System – UML Use Case Diagram",fontsize=21,fontname="Arial"];
+ node [fontname="Arial",fontsize=11,color="#334155",fontcolor="#0f172a"];
+ edge [fontname="Arial",fontsize=9,color="#475569"];
+ Driver [shape=plaintext,label="Driver"]; Attendant [shape=plaintext,label="Parking Attendant"]; Admin [shape=plaintext,label="Administrator"]; Gateway [shape=plaintext,label="Payment Gateway"];
+ subgraph cluster_system {
+  label="Smart Parking Management System"; fontsize=16; fontname="Arial"; color="#64748b"; style="rounded"; penwidth=2;
+  node [shape=ellipse,style="filled",fillcolor="#e8f1fb",width=2.2,height=0.55];
+  UC1 [label="Search Available Slots"]; UC2 [label="Reserve Slot in Advance"]; UC3 [label="Pay Parking Fee Online"]; UC4 [label="Enter Parking"];
+  UC5 [label="Read Vehicle Number Plate"]; UC6 [label="Open Barrier"]; UC7 [label="Handle Lost Ticket"]; UC8 [label="Configure Tariff"]; UC9 [label="View Occupancy Reports"];
+  {rank=same; UC1; UC2; UC3; UC4;} {rank=same; UC5; UC6; UC7; UC8; UC9;}
+  UC4 -> UC5 [style=dashed,label="<<include>>",arrowhead=vee]; UC4 -> UC6 [style=dashed,label="<<include>>",arrowhead=vee];
+ }
+ Driver -> UC1 [dir=none]; Driver -> UC2 [dir=none]; Driver -> UC3 [dir=none]; Driver -> UC4 [dir=none];
+ Attendant -> UC7 [dir=none]; Admin -> UC8 [dir=none]; Admin -> UC9 [dir=none]; Gateway -> UC3 [dir=none];
+}
