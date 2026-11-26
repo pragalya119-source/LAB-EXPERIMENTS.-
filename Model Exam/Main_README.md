@@ -15,6 +15,4 @@ Each folder contains `Source_Code/`, `Output_Screenshots/`, `README.md` and `Exp
 - Q3: a local Git repository was initialized and two commits created; commit history and clean status were captured. No GitHub remote URL/account was supplied, so no remote push was performed.
 - Q4: UML use-case diagram rendered from included model source. It is not a screenshot of Umbrello/StarUML. Recreate it in the CASE tool if native-tool evidence is required.
 
-No account credentials, remote push, Docker Hub publication or cloud deployment are fabricated. Replace placeholders with your own account details and capture platform screenshots where required.
 
-See each experiment README for run instructions. Python 3.10+ and Node.js 20+ are recommended. Docker is required for Q2 container execution.
